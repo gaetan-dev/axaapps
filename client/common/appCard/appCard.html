@@ -1,0 +1,46 @@
+<template name="appCard">
+  <article class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col
+  mdl-cell--2-col-tablet app-card">
+    <header class="app-card__thumb">
+      <img src="{{ app.image }}">
+    </header>
+    <div class="mdl-card__menu">
+      {{#if store}}
+      <button class="mdl-button mdl-button--icon mdl-js-button
+      mdl-js-ripple-effect">
+        <i>{{ app.followers.length }}</i>
+      </button>
+      {{else}}
+      <button class="mdl-button mdl-button--icon mdl-js-button
+      mdl-js-ripple-effect">
+        <i class="material-icons">share</i>
+      </button>
+      {{/if}}
+    </div>
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">{{ app.name }}</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      {{ app.desc }}
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      {{#if store}}
+      <a class="mdl-button mdl-button--colored mdl-js-button
+      mdl-js-ripple-effect" id="follow">Follow</a>
+      <input type="text" class="form-control" id="myLink_{{app._id}}" placeholder="Personal app's link">
+      {{else}}
+      {{#unless isDeleted}}
+      <a class="mdl-button mdl-button--colored mdl-js-button
+      mdl-js-ripple-effect" href="{{ app.link }}" target="_blank">Go to</a>
+      {{else}}
+      <a class="mdl-button mdl-button--colored mdl-js-button
+      mdl-js-ripple-effect">
+        <s>Deleted</s>
+      </a>
+      {{/unless}}
+      <a class="mdl-button mdl-button--colored mdl-js-button
+      mdl-js-ripple-effect" id="notFollowAnyMore">Remove</a>
+      {{/if}}
+    </div>
+  </article>
+</template>

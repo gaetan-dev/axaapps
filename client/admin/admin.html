@@ -1,0 +1,57 @@
+<template name="admin">
+  {{> addAppForm}}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Link</th>
+        <th>Image</th>
+        <th>Followers</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each apps}}
+      <tr>
+        <td></td>
+        <td>{{ name }}</td>
+        <td>{{ desc }}</td>
+        {{#unless isDeleted}}
+        <a target="_blank" href="{{ link }}">{{ link }}</a> {{else}}
+        <p>Deleted</p>
+        {{/unless}}
+        <td>{{ image }}</td>
+        <td>{{ followers.length }}</td>
+        {{#if currentUser}} {{#unless isDeleted}}
+        <button id="remove" class="btn btn-default">Remove</button>
+        {{/unless}} {{/if}}
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="addAppForm">
+  {{#if currentUser}}
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="App's name">
+    </div>
+    <div class="form-group">
+      <label for="desc">Description</label>
+      <input type="text" class="form-control" id="desc" placeholder="App's description">
+    </div>
+    <div class="form-group">
+      <label for="link">Link</label>
+      <input type="text" class="form-control" id="link" placeholder="App's link">
+    </div>
+    <div class="form-group">
+      <label for="desc">Image</label>
+      <input type="text" class="form-control" id="image" placeholder="App's image">
+    </div>
+    <button class="btn btn-default" id="create">Add</button>
+  </form>
+  {{/if}}
+</template>

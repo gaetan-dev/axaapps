@@ -1,0 +1,10 @@
+<template name="myApps">
+  {{#if currentUser}}
+  <div class="mdl-cell mdl-cell--12-col">
+    <h3>Mes applications</h3>
+  </div>
+  <div class="home-apps mdl-cell mdl-cell--12-col mdl-grid ui-sortable" id="apps">
+    {{#each apps}} {{#if isFollowed}} {{> appCard app=currentApp}} {{/if}} {{/each}}
+  </div>
+  {{/if}}
+</template>

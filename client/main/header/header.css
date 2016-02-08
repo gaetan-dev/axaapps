@@ -1,0 +1,9 @@
+/*HEADER*/
+
+.home-layout .home-header .mdl-textfield {
+  padding: 0px;
+  margin-top: 41px;
+}
+.home-layout .home-header .mdl-textfield .mdl-textfield__expandable-holder {
+  bottom: 19px;
+}

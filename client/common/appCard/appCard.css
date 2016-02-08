@@ -1,0 +1,22 @@
+.app-card > .mdl-card__menu{
+  color: #fff;
+}
+
+.app-card > .mdl-card__menu > .mdl-button--icon{
+  background-color: #38C4A5;
+}
+
+.app-card__thumb > img {
+  width: 100%;
+  height: 176px;
+}
+
+.app-card > .mdl-card__title {
+  color: #000;
+  margin-top: -50px;
+}
+
+.app-card > .mdl-card__supporting-text {
+  width: 100%;
+  height: 70px;
+}
